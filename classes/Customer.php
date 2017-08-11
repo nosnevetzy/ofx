@@ -85,6 +85,9 @@ class CustomerCore extends ObjectModel
     /** @var string Company */
     public $company;
 
+    /** @var string custom Customer Number requested by OFX */
+    public $customer_number;
+
     /** @var string SIRET */
     public $siret;
 
@@ -186,6 +189,7 @@ class CustomerCore extends ObjectModel
             'optin' => array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),
             'website' => array('type' => self::TYPE_STRING, 'validate' => 'isUrl'),
             'company' => array('type' => self::TYPE_STRING, 'validate' => 'isGenericName'),
+            'customer_number' => array('type' => self::TYPE_STRING),
             'siret' => array('type' => self::TYPE_STRING, 'validate' => 'isSiret'),
             'ape' => array('type' => self::TYPE_STRING, 'validate' => 'isApe'),
             'outstanding_allow_amount' => array('type' => self::TYPE_FLOAT, 'validate' => 'isFloat', 'copy_post' => false),
