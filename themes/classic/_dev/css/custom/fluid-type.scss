@@ -1,0 +1,51 @@
+
+//
+//MIXINS
+//
+@mixin fluid-type($min_font,$max_font){
+	font-size: #{$min_font}px;
+	@media screen and (min-width: #{$min_width}px) {
+		font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+	}
+	@media screen and (min-width: #{$max_width}px) {
+		font-size: #{$max_font}px; 
+	}
+}
+
+
+@mixin display-flex{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex-center-horizontal{
+	@include display-flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+}
+
+
+@mixin fluid-width($min_size,$max_size){
+	max-width: #{$min_size}px;
+	@media screen and (min-width: #{$min_width}px) {
+		max-width: calc( #{$min_size}px + (#{$max_size} - #{$min_size}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+	}
+	@media screen and (min-width: #{$max_width}px) {
+		max-width: #{$max_size}px; 
+	}
+}
+
+
+@mixin fluid-element($min,$max,$element){
+	#{$element}: #{$min}px;
+	@media screen and (min-width: #{$min_width}px) {
+		#{$element}: calc( #{$min}px + (#{$max} - #{$min}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+	}
+	@media screen and (min-width: #{$max_width}px) {
+		#{$element}: #{$max}px; 
+	}
+}
