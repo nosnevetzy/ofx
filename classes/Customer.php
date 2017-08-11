@@ -245,6 +245,7 @@ class CustomerCore extends ObjectModel
         $this->birthday = (empty($this->years) ? $this->birthday : (int) $this->years.'-'.(int) $this->months.'-'.(int) $this->days);
         $this->secure_key = md5(uniqid(rand(), true));
         $this->last_passwd_gen = date('Y-m-d H:i:s', strtotime('-'.Configuration::get('PS_PASSWD_TIME_FRONT').'minutes'));
+        $this->customer_number = date("mdY").'-'.rand(0001,9999);
 
         if ($this->newsletter && !Validate::isDate($this->newsletter_date_add)) {
             $this->newsletter_date_add = date('Y-m-d H:i:s');
