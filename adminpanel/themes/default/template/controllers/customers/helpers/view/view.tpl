@@ -73,6 +73,12 @@
 						</div>
 					</div>
 					<div class="row">
+						<label class="control-label col-lg-3">{l s='Customer Number'}</label>
+						<div class="col-lg-9">
+							<p class="form-control-static">{$customer->customer_number}</p>
+						</div>
+					</div>
+					<div class="row">
 						<label class="control-label col-lg-3">{l s='Last Visit'}</label>
 						<div class="col-lg-9">
 							<p class="form-control-static">{if $customer_stats['last_visit']}{$last_visit}{else}{l s='Never'}{/if}</p>
