@@ -145,6 +145,22 @@ class StateCore extends ObjectModel
 		'.($idCountry ? 'AND `id_country` = '.(int)$idCountry : ''));
     }
 
+
+    /**
+    * Get a state id with its iso code
+    *
+    * @param string $isoCode Iso code
+    *
+    * @return int state id
+    */
+    public static function getIsoById($idState = null)
+    {
+        return Db::getInstance()->getValue('
+        SELECT `iso_code`
+        FROM `'._DB_PREFIX_.'state`
+        WHERE `id_state` = \''.pSQL($idState).'\'');
+    }
+
     /**
     * Delete a state only if is not in use
     *

@@ -254,7 +254,11 @@ abstract class PaymentModuleCore extends Module
             $order_detail_list = array();
 
             do {
-                $reference = Order::generateReference();
+                $pickup = new Address((int)$this->context->cart->id_address_invoice);
+                $iso_code = State::getIsoById($pickup->id_state);
+
+                //$reference = Order::generateReference();
+                $reference = $iso_code.'-'.date("mdY").'-'.rand(0001,9999);
             } while (Order::getByReference($reference)->count());
 
             $this->currentOrderReference = $reference;
