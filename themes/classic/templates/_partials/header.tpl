@@ -43,7 +43,7 @@ Custom variables for hooks to check if hooks are empty or not
           <div class="hidden-sm-down flex-container header-wrapper">
             <div class="col-lg-3 col-md-2 hidden-sm-down" id="_desktop_logo">
               <a href="{$urls.base_url}">
-                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
+                <img class="logo" src="{$shop.logo}" alt="{$shop.name}">
               </a>
             </div>
             <div class="col-lg-4 col-md-5 col-xs-12 main-nav">

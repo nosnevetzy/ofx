@@ -1,17 +1,19 @@
 .block_newsletter {
-  @include search-box;
+  /* @include search-box; */
+    @include searchbox-transparent;
   font-size: $font-size-sm;
   p {
     padding-top: $small-space;
   }
   form {
     .input-wrapper {
-      overflow: hidden;
+      /*overflow: hidden;*/
     }
     input[type=text] {
       padding: 11px;
+      font-size: $font-size-xs;
       &:focus {
-        border: 3px $brand-primary solid;
+        border: 1px $brand-primary solid;
         padding: 8px 8px 9px;
         outline: 0;
       }
@@ -19,6 +21,10 @@
     }
     input {
       height: 42px;
+      width: 100%;
+    }
+    input[type=submit]{
+      margin-top: rem(12px);
     }
   }
   margin-bottom: rem(10px);
@@ -144,7 +150,6 @@
   background-image: url(../img/instagram.svg);
 }
 .footer-container {
-  margin-top: $medium-space;
   padding-top: $medium-space;
   overflow: hidden;
   box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.3);
@@ -152,9 +157,9 @@
     margin-bottom: rem(5px);
   }
   li a {
-    color: $gray-dark;
+    color: $btn-primary-color;
     cursor: pointer;
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     &:hover {
       color: $brand-primary;
     }
@@ -163,6 +168,13 @@
     .collapse {
       display: inherit;
     }
+  }
+  h3, p{
+    color: $btn-primary-color;
+    font-weight: $display2-weight;
+  }
+  p{
+    font-size: $font-size-xs;
   }
 }
 
@@ -174,6 +186,7 @@
   .footer-container {
     box-shadow: none;
     margin-top: 0;
+    padding-top: 0;
     .wrapper {
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -182,11 +195,13 @@
       .h3 {
         line-height: 1.5;
         font-size: rem(16px);
+        color: #FFF;
       }
       .title {
         padding: rem(10px);
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px dashed $gray-lighter;
         cursor: pointer;
+        text-align: center;
         .collapse-icons .remove {
           display: none;
         }
@@ -202,6 +217,7 @@
       .navbar-toggler {
         display: inline-block;
         padding: 0;
+        color: #FFF;
       }
       .collapse {
         display: none;

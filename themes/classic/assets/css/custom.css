@@ -3,3 +3,11 @@
  * A template should always ship with an empty custom.css
  */
 
+#footer{
+	  background: linear-gradient(
+	      rgba(75,0,130, 0.7), 
+	      rgba(75,0,130, 0.7)
+	    ),
+	  url(../img/bw-bg.jpg) top center no-repeat;
+	  background-size: cover;
+}

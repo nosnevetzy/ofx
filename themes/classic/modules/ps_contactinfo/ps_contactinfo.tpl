@@ -23,24 +23,26 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div class="block-contact col-md-4 links wrapper">
+<div class="col-md-4 links wrapper">
   <div class="hidden-sm-down">
-    <h4 class="text-uppercase block-contact-title">{l s='Store information' d='Shop.Theme'}</h4>
-      {$contact_infos.address.formatted nofilter}
-      {if $contact_infos.phone}
-        <br>
-        {* [1][/1] is for a HTML tag. *}
-        {l s='Call us: [1]%phone%[/1]'
-          sprintf=[
-          '[1]' => '<span>',
-          '[/1]' => '</span>',
-          '%phone%' => $contact_infos.phone
-          ]
-          d='Shop.Theme'
-        }
-      {/if}
+    <!-- <h3 class="text-uppercase">{l s='Store information' d='Shop.Theme'}</h3> -->
+    <img class="img-responsive m-bottom-sm" src="{$urls.img_url}ofx-footer-logo.png">
+      <p>{$contact_infos.address.formatted nofilter}</p>
+        {if $contact_infos.phone}
+          <p>
+          {* [1][/1] is for a HTML tag. *}
+          {l s='Call us: [1]%phone%[/1]'
+            sprintf=[
+            '[1]' => '<span>',
+            '[/1]' => '</span>',
+            '%phone%' => $contact_infos.phone
+            ]
+            d='Shop.Theme'
+          }
+          </p>
+        {/if}
       {if $contact_infos.fax}
-        <br>
+        <p>
         {* [1][/1] is for a HTML tag. *}
         {l
           s='Fax: [1]%fax%[/1]'
@@ -51,9 +53,10 @@
           ]
           d='Shop.Theme'
         }
+        </p>
       {/if}
       {if $contact_infos.email}
-        <br>
+        <p>
         {* [1][/1] is for a HTML tag. *}
         {l
           s='Email us: [1]%email%[/1]'
@@ -64,11 +67,54 @@
           ]
           d='Shop.Theme'
         }
+        </p>
       {/if}
   </div>
   <div class="hidden-md-up">
     <div class="title">
-      <a class="h3" href="{$urls.pages.stores}">{l s='Store information' d='Shop.Theme'}</a>
+      <img class="img-responsive m-bottom-sm" src="{$urls.img_url}ofx-footer-logo.png">
+        <p>{$contact_infos.address.formatted nofilter}</p>
+          {if $contact_infos.phone}
+            <p>
+            {* [1][/1] is for a HTML tag. *}
+            {l s='Call us: [1]%phone%[/1]'
+              sprintf=[
+              '[1]' => '<span>',
+              '[/1]' => '</span>',
+              '%phone%' => $contact_infos.phone
+              ]
+              d='Shop.Theme'
+            }
+            </p>
+          {/if}
+        {if $contact_infos.fax}
+          <p>
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='Fax: [1]%fax%[/1]'
+            sprintf=[
+              '[1]' => '<span>',
+              '[/1]' => '</span>',
+              '%fax%' => $contact_infos.fax
+            ]
+            d='Shop.Theme'
+          }
+          </p>
+        {/if}
+        {if $contact_infos.email}
+          <p>
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='Email us: [1]%email%[/1]'
+            sprintf=[
+              '[1]' => '<span>',
+              '[/1]' => '</span>',
+              '%email%' => $contact_infos.email
+            ]
+            d='Shop.Theme'
+          }
+          </p>
+        {/if}
     </div>
   </div>
 </div>
