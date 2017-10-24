@@ -34,6 +34,8 @@ import './customer';
 import './listing';
 import './product';
 import './cart';
+import './custom';
+
 
 import DropDown from './components/drop-down';
 import Form from './components/form';
